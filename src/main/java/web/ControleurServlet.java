@@ -23,6 +23,8 @@ public class ControleurServlet extends HttpServlet {
         modele.setMotCle(motCle);
         modele.setProduits(prods);
         req.setAttribute("modele", modele);
+        req.setAttribute("arr", modele.produits);
+
         RequestDispatcher rd = req.getRequestDispatcher("ProduitsView.jsp");
         rd.forward(req, resp);
     }
