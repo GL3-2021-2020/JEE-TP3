@@ -7,7 +7,7 @@ public class TestCatalogue {
         CatalogueImpl metier = new CatalogueImpl();
         List<Produit> prods = metier.getProduitsParMotCle("HP");
         for (Produit p : prods) {
-            System.out.println(p.quantity);
+            System.out.println(p.getNomProduit());
         }
     }
 }

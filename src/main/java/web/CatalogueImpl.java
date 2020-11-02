@@ -34,7 +34,6 @@ public class CatalogueImpl implements ICatalogue {
     @Override
     public void addProduit(Produit p) {
         // TODO Auto-generated method stub
-
     }
 
 }
