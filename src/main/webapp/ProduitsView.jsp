@@ -9,8 +9,8 @@ prefix="c" %>
   </head>
 
   <body>
-    <form action="controleur" method="post">
-      <input type="text" name="motCle" value="${modele.motCle}" />
+    <form action="" method="get">
+      <input type="text" name="motcle" value="${modele.motCle}" />
       <input type="submit" value="OK" />
     </form>
     <table border="1" width="80%">
@@ -18,12 +18,14 @@ prefix="c" %>
         <th>ID</th>
         <th>Nom</th>
         <th>Prix</th>
+        <th>Quantity</th>
       </tr>
       <c:forEach items="${modele.produits}" var="p">
         <tr>
           <td>${p.idProduit}</td>
           <td>${p.nomProduit}</td>
           <td>${p.prix}</td>
+          <td>${p.quantity}</td>
         </tr>
       </c:forEach>
     </table>

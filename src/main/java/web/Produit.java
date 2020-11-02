@@ -4,22 +4,32 @@ import java.io.Serializable;
 
 public class Produit implements Serializable {
 
+    private static final long serialVersionUID = 7931931861816543213L;
     /**
      *
      */
-    private static final long serialVersionUID = -7949614737801799634L;
     public Long idProduit;
     public String nomProduit;
     public double prix;
+    public int quantity;
 
     public Produit() {
         super();
     }
 
-    public Produit(String nomProduit, double prix) {
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Produit(String nomProduit, double prix, int quantity) {
         super();
         this.nomProduit = nomProduit;
         this.prix = prix;
+        this.quantity = quantity;
     }
 
     public Long getIdProduit() {
