@@ -33,7 +33,31 @@ public class CatalogueImpl implements ICatalogue {
 
     @Override
     public void addProduit(Produit p) {
-        // TODO Auto-generated method stub
+        Connection connection = SingletonConnection.getConnection();
+        try {
+            String nomProduit = p.nomProduit;
+            String query = "INSERT INTO produits(NOM_PRODUIT,PRIX,quantity) VALUES (" + nomProduit + "," + p.prix + ","
+                    + p.quantity + ");";
+            System.out.println(query);
+            PreparedStatement ps = connection.prepareStatement(query);
+            int resultSet = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteProduit(Integer id) {
+        Connection conn = SingletonConnection.getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement("delete from produits where ID_PRODUIT = ?");
+            ps.setInt(1, id);
+            Integer res = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

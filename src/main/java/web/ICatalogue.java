@@ -6,4 +6,6 @@ public interface ICatalogue {
     public List<Produit> getProduitsParMotCle(String mc);
 
     public void addProduit(Produit p);
+
+    public void deleteProduit(Integer id);
 }

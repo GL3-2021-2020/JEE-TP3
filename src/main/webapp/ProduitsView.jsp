@@ -26,6 +26,17 @@ prefix="c" %>
           <td>${p.nomProduit}</td>
           <td>${p.prix}</td>
           <td>${p.quantity}</td>
+          <td>
+            <form action="" method="delete">
+              <input
+                style="display: none"
+                type="text"
+                name="delete_id"
+                value="${p.idProduit}"
+              />
+              <input type="submit" value="delete" />
+            </form>
+          </td>
         </tr>
       </c:forEach>
     </table>
